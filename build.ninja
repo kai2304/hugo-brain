@@ -1,0 +1,10 @@
+
+rule org2md
+  command = emacs --batch -l ~/.emacs.d/init.el -l publish.el --eval "(jethro/publish \"$in\")"
+  description = org2md $in
+
+build content/posts/20200620184342-tada.md: org2md org/20200620184342-tada.org
+
+build content/posts/20210413205523-thesis.md: org2md org/20210413205523-thesis.org
+
+build content/posts/20200621155223-explainable_data_decomposition.md: org2md org/20200621155223-explainable_data_decomposition.org
